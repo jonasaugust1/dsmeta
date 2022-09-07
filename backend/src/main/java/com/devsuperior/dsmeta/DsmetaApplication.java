@@ -1,26 +1,31 @@
 package com.devsuperior.dsmeta;
 
-import com.devsuperior.dsmeta.entities.Department;
 import com.devsuperior.dsmeta.entities.Employee;
+import com.devsuperior.dsmeta.repositories.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class DsmetaApplication implements CommandLineRunner {
 
+	@Autowired
+	private EmployeeRepository repository;
 	public static void main(String[] args) {
-
 		SpringApplication.run(DsmetaApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		Department d1 = new Department(1L, "Vendas");
-		System.out.println(d1);
 
-		Employee e1 = new Employee(1L, "Maria", 6000.0, d1);
-		System.out.println(e1);
+//		List<Employee> result = repository.findAll();
+//
+//		for(Employee emp: result){
+//			System.out.println(emp);
+//		}
 	}
 
 }
