@@ -13,4 +13,5 @@ This application was proposed by DevSuperior.
 
 - Java
 - Spring Boot
-- react
+- React
+- Typescript
